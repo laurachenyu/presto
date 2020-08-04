@@ -351,6 +351,24 @@
             <artifactId>testng</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- for coral -->
+        <dependency>
+            <groupId>com.linkedin.coral</groupId>
+            <artifactId>coral-presto</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.linkedin.calcite</groupId>
+            <artifactId>calcite-core</artifactId>
+            <classifier>shaded</classifier>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.linkedin.coral</groupId>
+            <artifactId>coral-hive</artifactId>
+        </dependency>
     </dependencies>
 
     <profiles>

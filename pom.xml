@@ -33,6 +33,13 @@
         <tag>HEAD</tag>
     </scm>
 
+    <repositories>
+        <repository>
+            <id>dl.bintray</id>
+            <url>http://dl.bintray.com/funcheetah8/maven/</url>
+        </repository>
+    </repositories>
+
     <properties>
         <air.main.basedir>${project.basedir}</air.main.basedir>
 
@@ -490,7 +497,7 @@
             <dependency>
                 <groupId>io.prestosql.hive</groupId>
                 <artifactId>hive-apache</artifactId>
-                <version>3.0.0-4</version>
+                <version>3.0.0-5-SNAPSHOT</version>
             </dependency>
 
             <dependency>
@@ -1235,6 +1242,37 @@
                 <groupId>org.xerial.snappy</groupId>
                 <artifactId>snappy-java</artifactId>
                 <version>1.1.7.3</version>
+            </dependency>
+
+            <!-- for coral -->
+            <dependency>
+                <groupId>com.linkedin.coral</groupId>
+                <artifactId>coral-presto</artifactId>
+                <version>1.0.6</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.linkedin.calcite</groupId>
+                <artifactId>calcite-core</artifactId>
+                <version>1.21.1.1</version>
+                <classifier>shaded</classifier>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.linkedin.coral</groupId>
+                <artifactId>coral-hive</artifactId>
+                <version>1.0.6</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.hive</groupId>
+                        <artifactId>hive-metastore</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.hadoop</groupId>
+                        <artifactId>hadoop-common</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
         </dependencies>
     </dependencyManagement>
